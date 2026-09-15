@@ -8,7 +8,7 @@
       <a class="brand" href="/"><span class="brand-mark">F</span>Fo<em>Digits</em></a>
       <nav class="nav-links" id="navLinks">
         <a href="/" data-nav="/">Home</a>
-        <a href="/catalog" data-nav="/catalog">Products</a>
+        <a href="/#products" data-nav="/#products">Products</a>
         <a href="/licenses" data-nav="/licenses">Licenses</a>
         <a href="/about" data-nav="/about">About</a>
         <a href="/contact" data-nav="/contact">Contact</a>

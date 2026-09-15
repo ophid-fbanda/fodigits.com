@@ -40,23 +40,15 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="products">
       <div class="wrap">
         <div class="section-head reveal">
           <h2>Products</h2>
         </div>
+        <input class="search" id="home-q" type="search" placeholder="Search name, category, or version…" />
+        <div class="cats" id="home-cats" style="justify-content:center;margin:18px 0 28px"></div>
+        <p id="home-count" style="margin:0 0 16px;color:var(--mute);text-align:center"></p>
         <div class="grid" id="featured"></div>
-      </div>
-    </section>
-
-    <section class="section" style="padding-top:0">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="kicker">Catalog</span>
-          <h2>Browse by category</h2>
-          <p>Operations, meetings, healthcare, finance, and more.</p>
-        </div>
-        <div class="cats" id="home-cats" style="justify-content:center"></div>
       </div>
     </section>
 
@@ -77,10 +69,35 @@
   <script src="/js/store.js"></script>
   <script>
     FoStore.loadCatalog().then(function (data) {
-      FoStore.renderGrid(document.getElementById("featured"), data.products.filter(function (p) { return p.featured; }), data.categories);
-      document.getElementById("home-cats").innerHTML = data.categories.map(function (c) {
-        return '<a class="cat" href="/catalog?cat=' + c.id + '">' + c.name + "</a>";
+      var current = "all";
+      var query = "";
+      var cats = [{ id: "all", name: "All" }].concat(data.categories);
+      function paint() {
+        var list = data.products.filter(function (p) {
+          var inCat = current === "all" || p.category === current;
+          var hay = (p.name + " " + p.short + " " + p.category + " " + p.version).toLowerCase();
+          return inCat && (!query || hay.indexOf(query) !== -1);
+        });
+        FoStore.renderGrid(document.getElementById("featured"), list, data.categories);
+        document.getElementById("home-count").textContent = list.length + (list.length === 1 ? " product" : " products");
+        document.querySelectorAll("#home-cats .cat").forEach(function (el) {
+          el.classList.toggle("is-on", el.getAttribute("data-id") === current);
+        });
+      }
+      document.getElementById("home-cats").innerHTML = cats.map(function (c) {
+        return '<button type="button" class="cat" data-id="' + c.id + '">' + c.name + "</button>";
       }).join("");
+      document.getElementById("home-cats").addEventListener("click", function (e) {
+        var btn = e.target.closest("[data-id]");
+        if (!btn) return;
+        current = btn.getAttribute("data-id");
+        paint();
+      });
+      document.getElementById("home-q").addEventListener("input", function (e) {
+        query = e.target.value.trim().toLowerCase();
+        paint();
+      });
+      paint();
     });
   </script>
 </body>
