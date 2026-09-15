@@ -9,7 +9,7 @@
       <nav class="nav-links" id="navLinks">
         <a href="/" data-nav="/">Home</a>
         <a href="/catalog" data-nav="/catalog">Products</a>
-        <a href="/how-it-works" data-nav="/how-it-works">Deploy</a>
+        <a href="/how-it-works" data-nav="/how-it-works">Install</a>
         <a href="/licenses" data-nav="/licenses">Licenses</a>
         <a href="/about" data-nav="/about">About</a>
         <a href="/contact" data-nav="/contact">Contact</a>
@@ -36,7 +36,7 @@
         </div>
         <div>
           <h5>Company</h5>
-          <a href="/how-it-works">Deployment</a>
+          <a href="/how-it-works">Install</a>
           <a href="/licenses">Licenses</a>
           <a href="/about">About</a>
         </div>
