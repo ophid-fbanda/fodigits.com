@@ -24,7 +24,7 @@
         <div>
           <a class="brand" href="/"><span class="brand-mark">F</span>Fo<em>Digits</em></a>
           <p class="prose" style="margin-top:12px;max-width:280px">
-            Business software deployed on your infrastructure.
+            Asset management, meetings, clinic, and team software.
           </p>
         </div>
         <div>
