@@ -1,58 +1,25 @@
-# FoDigits Hosting
+# FoDigits
 
-A rich, modern, animated and fully responsive marketing website for a web hosting
-company. Built with a lightweight Node.js/Express backend that serves the static
-front-end and handles **contact** and **feedback** form submissions.
+A software studio site. FoDigits sells tools you **download and host yourself** —
+asset registers, private meetings, clinic desks, and the rest of the catalog.
 
-Live demo domain: fodigits.com
+This repository is the public catalog and download desk (starter kits). Full
+product binaries are not included.
 
-## Features
-
-- **Classic + modern design** — glassmorphism, aurora gradient background, animated particle field.
-- **Highly animated** — scroll-reveal, animated counters, typing hero, floating chips, 3D card tilt, scroll progress bar, hover micro-interactions.
-- **Fully responsive** — desktop, tablet and mobile with an animated mobile menu.
-- **Several products / services** — Shared Hosting, VPS, Cloud, Dedicated Servers, Managed WordPress, Domains & SSL.
-- **Pricing** — monthly/yearly billing toggle with three plans.
-- **Contact & feedback** — working forms with validation posting to the backend
-  (`/api/contact`, `/api/feedback`); submissions are stored under `data/`.
-- **Direct contact channels** — email (`support@fodigits.com`, `sales@fodigits.com`), phone, address.
-- Respects `prefers-reduced-motion`.
-
-## Project structure
-
-```
-server.js            Express server + form APIs
-public/
-  index.html         Single-page site
-  css/styles.css     Styles + animations
-  js/main.js         Interactions & animations
-data/                Stored form submissions (git-ignored)
-```
-
-## Run locally
+## Run
 
 ```bash
 npm install
 PORT=3000 npm start
-# open http://localhost:3000
 ```
 
-## API
+Open http://localhost:3000
 
-| Method | Endpoint        | Body                                        |
-|--------|-----------------|---------------------------------------------|
-| POST   | `/api/contact`  | `{ name, email, subject?, message }`        |
-| POST   | `/api/feedback` | `{ name?, rating (1-5), comment? }`          |
-| GET    | `/api/health`   | health check                                |
+## What is here
 
-Submissions are appended to `data/contact-messages.json` and `data/feedback.json`.
+- Catalog of products under categories (operations, meetings, healthcare, …)
+- Product pages with edition + package selection
+- `GET /download/:slug` — a real zip starter kit (README, license, compose, env)
+- `POST /api/contact` — studio inbox (`data/contact-messages.json`)
 
-## Deployment
-
-The app listens on `PORT` (default **80**). On the production VPS it is managed by
-a `systemd` service (`fodigits.service`) so it starts on boot and restarts on failure:
-
-```bash
-npm install --omit=dev
-sudo PORT=80 node server.js   # or via the systemd unit
-```
+Production listens on `PORT` (default 80) via `fodigits.service` on the VPS.

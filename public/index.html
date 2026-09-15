@@ -3,375 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="FoDigits Hosting — blazing-fast, secure and scalable web hosting, VPS, cloud servers, WordPress hosting and domains. 99.99% uptime, 24/7 human support." />
-  <meta name="theme-color" content="#0b1020" />
-  <title>FoDigits Hosting — Fast, Secure &amp; Scalable Cloud Hosting</title>
+  <meta name="description" content="FoDigits makes software you download and host yourself — asset registers, private meetings, clinic desks, and more." />
+  <title>FoDigits — Software you run yourself</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Outfit:wght@400;500;600;650&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/site.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%232a4b3d' width='32' height='32' rx='8'/%3E%3Ctext x='8' y='23' fill='%23f4efe6' font-family='Georgia' font-size='18'%3EF%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
-  <!-- Animated backdrop -->
-  <div class="bg-aurora" aria-hidden="true">
-    <span class="orb orb-1"></span>
-    <span class="orb orb-2"></span>
-    <span class="orb orb-3"></span>
-  </div>
-  <canvas id="particles" aria-hidden="true"></canvas>
-
-  <!-- Scroll progress -->
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-  <!-- Navbar -->
-  <header class="nav" id="nav">
-    <div class="container nav-inner">
-      <a href="#home" class="brand" aria-label="FoDigits Hosting home">
-        <span class="brand-mark">⚡</span>
-        <span class="brand-name">Fo<span>Digits</span></span>
-      </a>
-      <nav class="nav-links" id="navLinks" aria-label="Primary">
-        <a href="#services">Services</a>
-        <a href="#features">Why Us</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#feedback">Feedback</a>
-        <a href="#contact">Contact</a>
-        <a href="#pricing" class="btn btn-primary nav-cta">Get Started</a>
-      </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+  <header class="site-header" id="site-header"></header>
 
   <main>
-    <!-- Hero -->
-    <section class="hero" id="home">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <span class="eyebrow reveal">⚡ 99.99% uptime · NVMe · Global edge</span>
-          <h1 class="hero-title reveal">
-            Hosting that feels like<br />
-            <span class="type-wrap"><span id="typed" class="typed"></span><span class="caret">|</span></span>
-          </h1>
-          <p class="hero-sub reveal">
-            Launch websites, apps and stores on infrastructure engineered for speed and
-            reliability. NVMe storage, free SSL, daily backups and support from real humans —
-            around the clock.
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="kicker">A software studio</span>
+          <h1>Tools you take home and run on your own machines.</h1>
+          <p class="lede">
+            FoDigits builds small, finished products — asset registers, private video rooms, clinic desks —
+            that you download, pay for, and host yourself. Your data stays where you put it.
           </p>
-          <div class="hero-actions reveal">
-            <a href="#pricing" class="btn btn-primary btn-lg">Explore Plans</a>
-            <a href="#services" class="btn btn-ghost btn-lg">Our Services</a>
+          <div class="hero-actions">
+            <a class="btn btn-forest" href="/catalog">See the catalog</a>
+            <a class="btn btn-ghost" href="/how-it-works">How hosting it yourself works</a>
           </div>
-          <div class="hero-badges reveal">
-            <span>🔒 Free SSL</span>
-            <span>💾 Daily Backups</span>
-            <span>🚀 NVMe SSD</span>
-            <span>🌍 Global CDN</span>
-          </div>
+          <p class="hero-note">Docker or Linux packages. White-label when you need your name on the door.</p>
         </div>
-        <div class="hero-visual reveal">
-          <div class="glass-card tilt">
-            <div class="term">
-              <div class="term-bar"><i></i><i></i><i></i><span>ssh root@fodigits</span></div>
-              <pre class="term-body"><code><span class="c-dim">$</span> deploy --app myshop <span class="c-ok">✔</span>
-<span class="c-dim">→</span> provisioning NVMe node <span class="c-accent">eu-central</span>
-<span class="c-dim">→</span> issuing SSL certificate <span class="c-ok">✔</span>
-<span class="c-dim">→</span> warming global CDN edges <span class="c-ok">✔</span>
-<span class="c-ok">✔ live in 14s</span> · https://myshop.fodigits.com</code></pre>
+        <div class="collage" aria-hidden="true">
+          <div class="window w3">
+            <header><i></i><i></i><i></i><span>People</span></header>
+            <div class="win-body">
+              <span class="chip">12 on leave</span>
             </div>
-            <div class="float-chip chip-1">🟢 Uptime 99.99%</div>
-            <div class="float-chip chip-2">⚡ 12ms TTFB</div>
-            <div class="float-chip chip-3">🛡️ DDoS Shield</div>
           </div>
-        </div>
-      </div>
-      <a href="#stats" class="scroll-hint" aria-label="Scroll down"><span></span></a>
-    </section>
-
-    <!-- Stats -->
-    <section class="stats" id="stats">
-      <div class="container stats-grid">
-        <div class="stat reveal"><div class="stat-num" data-count="99.99" data-suffix="%">0</div><div class="stat-label">Uptime SLA</div></div>
-        <div class="stat reveal"><div class="stat-num" data-count="120000" data-suffix="+">0</div><div class="stat-label">Sites Hosted</div></div>
-        <div class="stat reveal"><div class="stat-num" data-count="14" data-suffix="">0</div><div class="stat-label">Global Regions</div></div>
-        <div class="stat reveal"><div class="stat-num" data-count="24" data-suffix="/7">0</div><div class="stat-label">Human Support</div></div>
-      </div>
-    </section>
-
-    <!-- Services / Products -->
-    <section class="section services" id="services">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="pill">Products &amp; Services</span>
-          <h2>Everything you need to go live</h2>
-          <p>From your first blog to a global commerce platform — pick the power you need and scale in a click.</p>
-        </div>
-        <div class="cards-grid">
-          <article class="card reveal">
-            <div class="card-icon">🌐</div>
-            <h3>Shared Hosting</h3>
-            <p>Perfect for blogs and small sites. 1-click WordPress, free SSL and email included.</p>
-            <ul><li>NVMe storage</li><li>Free domain (1 yr)</li><li>cPanel included</li></ul>
-            <a href="#pricing" class="card-link">See plans →</a>
-          </article>
-          <article class="card reveal">
-            <div class="card-icon">🖥️</div>
-            <h3>VPS Hosting</h3>
-            <p>Dedicated resources with full root access. Spin up in seconds, resize anytime.</p>
-            <ul><li>Guaranteed vCPU &amp; RAM</li><li>Full root / KVM</li><li>Snapshots &amp; backups</li></ul>
-            <a href="#pricing" class="card-link">See plans →</a>
-          </article>
-          <article class="card reveal">
-            <div class="card-icon">☁️</div>
-            <h3>Cloud Hosting</h3>
-            <p>Auto-scaling, self-healing cloud that grows with your traffic spikes effortlessly.</p>
-            <ul><li>Load balancing</li><li>Auto-scale</li><li>Pay for what you use</li></ul>
-            <a href="#pricing" class="card-link">See plans →</a>
-          </article>
-          <article class="card reveal">
-            <div class="card-icon">🧱</div>
-            <h3>Dedicated Servers</h3>
-            <p>Bare-metal muscle for demanding workloads with fully isolated hardware.</p>
-            <ul><li>Enterprise CPUs</li><li>Up to 2TB RAM</li><li>10 Gbps network</li></ul>
-            <a href="#contact" class="card-link">Talk to sales →</a>
-          </article>
-          <article class="card reveal">
-            <div class="card-icon">📝</div>
-            <h3>Managed WordPress</h3>
-            <p>Blazing WordPress with auto-updates, caching and staging built right in.</p>
-            <ul><li>Edge caching</li><li>Staging sites</li><li>Malware scanning</li></ul>
-            <a href="#pricing" class="card-link">See plans →</a>
-          </article>
-          <article class="card reveal">
-            <div class="card-icon">🔗</div>
-            <h3>Domains &amp; SSL</h3>
-            <p>Register, transfer and secure domains with free wildcard SSL certificates.</p>
-            <ul><li>500+ TLDs</li><li>Free WHOIS privacy</li><li>DNS management</li></ul>
-            <a href="#contact" class="card-link">Get a domain →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features / Why us -->
-    <section class="section features" id="features">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="pill">Why FoDigits</span>
-          <h2>Built for speed. Backed by humans.</h2>
-          <p>Enterprise-grade infrastructure with the friendly support of a small team.</p>
-        </div>
-        <div class="feature-grid">
-          <div class="feature reveal"><span class="f-ic">🚀</span><h4>NVMe Everywhere</h4><p>Up to 20× faster than traditional SSDs for snappy load times.</p></div>
-          <div class="feature reveal"><span class="f-ic">🛡️</span><h4>DDoS Protection</h4><p>Always-on mitigation keeps you online through attacks.</p></div>
-          <div class="feature reveal"><span class="f-ic">🔒</span><h4>Free SSL</h4><p>Automated Let's Encrypt certificates on every domain.</p></div>
-          <div class="feature reveal"><span class="f-ic">💾</span><h4>Daily Backups</h4><p>Restore your whole site to any point with one click.</p></div>
-          <div class="feature reveal"><span class="f-ic">🌍</span><h4>Global CDN</h4><p>Content served from 200+ edge locations worldwide.</p></div>
-          <div class="feature reveal"><span class="f-ic">💬</span><h4>24/7 Support</h4><p>Real engineers on chat, email and phone — anytime.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="section pricing" id="pricing">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="pill">Pricing</span>
-          <h2>Simple, honest pricing</h2>
-          <p>No hidden fees. Cancel anytime. 30-day money-back guarantee.</p>
-          <div class="billing-toggle reveal">
-            <span class="bt-label active" id="btMonthly">Monthly</span>
-            <button class="switch" id="billingSwitch" aria-label="Toggle yearly billing"><span></span></button>
-            <span class="bt-label" id="btYearly">Yearly <em>save 20%</em></span>
-          </div>
-        </div>
-        <div class="price-grid">
-          <article class="price-card reveal">
-            <h3>Starter</h3>
-            <p class="pc-desc">For personal sites &amp; blogs</p>
-            <div class="price"><span class="cur">$</span><span class="amt" data-monthly="4" data-yearly="3">4</span><span class="per">/mo</span></div>
-            <ul>
-              <li>1 Website</li><li>10 GB NVMe</li><li>Free SSL &amp; CDN</li><li>Weekly backups</li><li>Email support</li>
-            </ul>
-            <a href="#contact" class="btn btn-ghost btn-block">Choose Starter</a>
-          </article>
-          <article class="price-card featured reveal">
-            <div class="ribbon">Most Popular</div>
-            <h3>Pro</h3>
-            <p class="pc-desc">For growing businesses</p>
-            <div class="price"><span class="cur">$</span><span class="amt" data-monthly="12" data-yearly="10">12</span><span class="per">/mo</span></div>
-            <ul>
-              <li>Unlimited Websites</li><li>100 GB NVMe</li><li>Free SSL &amp; global CDN</li><li>Daily backups</li><li>Priority 24/7 support</li>
-            </ul>
-            <a href="#contact" class="btn btn-primary btn-block">Choose Pro</a>
-          </article>
-          <article class="price-card reveal">
-            <h3>Business</h3>
-            <p class="pc-desc">For high-traffic apps</p>
-            <div class="price"><span class="cur">$</span><span class="amt" data-monthly="29" data-yearly="24">29</span><span class="per">/mo</span></div>
-            <ul>
-              <li>Unlimited Websites</li><li>400 GB NVMe</li><li>Dedicated resources</li><li>Hourly backups</li><li>Dedicated manager</li>
-            </ul>
-            <a href="#contact" class="btn btn-ghost btn-block">Choose Business</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Reviews -->
-    <section class="section reviews" id="reviews">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="pill">Loved by builders</span>
-          <h2>What our customers say</h2>
-          <p>Over 120,000 sites trust FoDigits to stay fast and online.</p>
-        </div>
-        <div class="review-grid">
-          <figure class="review reveal">
-            <div class="stars">★★★★★</div>
-            <blockquote>"Migrated our store and page loads dropped by half. Support answered in under two minutes at 3am."</blockquote>
-            <figcaption><span class="avatar">A</span><span><strong>Amara N.</strong><small>Founder, Kanzu Store</small></span></figcaption>
-          </figure>
-          <figure class="review reveal">
-            <div class="stars">★★★★★</div>
-            <blockquote>"The VPS just works. Root access, instant snapshots, and it never goes down. Exactly what I needed."</blockquote>
-            <figcaption><span class="avatar">D</span><span><strong>Daniel K.</strong><small>Indie Developer</small></span></figcaption>
-          </figure>
-          <figure class="review reveal">
-            <div class="stars">★★★★★</div>
-            <blockquote>"We scaled from 1k to 90k visitors overnight during a launch. Cloud auto-scaling handled it flawlessly."</blockquote>
-            <figcaption><span class="avatar">S</span><span><strong>Sofia R.</strong><small>CTO, Brightloop</small></span></figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- Feedback -->
-    <section class="section feedback" id="feedback">
-      <div class="container narrow">
-        <div class="section-head reveal">
-          <span class="pill">Your voice matters</span>
-          <h2>Leave us feedback</h2>
-          <p>Tell us how we're doing — it shapes what we build next.</p>
-        </div>
-        <form class="form glass reveal" id="feedbackForm" novalidate>
-          <div class="field">
-            <label for="fbName">Name <span class="opt">(optional)</span></label>
-            <input type="text" id="fbName" name="name" placeholder="Your name" autocomplete="name" />
-          </div>
-          <div class="field">
-            <label>How would you rate us?</label>
-            <div class="rating" id="rating" role="radiogroup" aria-label="Rating">
-              <button type="button" class="star" data-value="1" aria-label="1 star">★</button>
-              <button type="button" class="star" data-value="2" aria-label="2 stars">★</button>
-              <button type="button" class="star" data-value="3" aria-label="3 stars">★</button>
-              <button type="button" class="star" data-value="4" aria-label="4 stars">★</button>
-              <button type="button" class="star" data-value="5" aria-label="5 stars">★</button>
+          <div class="window w1">
+            <header><i></i><i></i><i></i><span>FoDigits Assets · Register</span></header>
+            <div class="win-body">
+              <div class="fake-row"><strong>Generator 4kVA</strong><span>Workshop · Amina</span></div>
+              <div class="fake-row"><strong>Laptop · T480</strong><span>Office · Daniel</span></div>
+              <div class="fake-row"><strong>Ultrasound cart</strong><span>Clinic · Bay 2</span></div>
+              <div class="fake-row"><strong>School projector</strong><span>Hall · Checked in</span></div>
             </div>
-            <input type="hidden" id="ratingValue" name="rating" value="" />
           </div>
-          <div class="field">
-            <label for="fbComment">Comments</label>
-            <textarea id="fbComment" name="comment" rows="4" placeholder="What did you love? What can we improve?"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block">Send Feedback</button>
-          <p class="form-status" id="feedbackStatus" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="section contact" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-info reveal">
-          <span class="pill">Get in touch</span>
-          <h2>Let's build something fast together</h2>
-          <p>Questions about a plan, a migration, or need a custom quote? Our team replies within minutes.</p>
-          <ul class="contact-list">
-            <li><span class="ci-ic">✉️</span><div><strong>Email</strong><a href="mailto:support@fodigits.com">support@fodigits.com</a></div></li>
-            <li><span class="ci-ic">💬</span><div><strong>Sales</strong><a href="mailto:sales@fodigits.com">sales@fodigits.com</a></div></li>
-            <li><span class="ci-ic">📞</span><div><strong>Phone</strong><a href="tel:+18005550100">+1 (800) 555-0100</a></div></li>
-            <li><span class="ci-ic">📍</span><div><strong>HQ</strong><span>128 Cloud Ave, Edge City, Internet</span></div></li>
-          </ul>
-          <div class="socials">
-            <a href="#" aria-label="Twitter / X">𝕏</a>
-            <a href="#" aria-label="GitHub">⌨</a>
-            <a href="#" aria-label="LinkedIn">in</a>
-            <a href="#" aria-label="Discord">◎</a>
+          <div class="window w2">
+            <header><i></i><i></i><i></i><span>Meet · Waiting room</span></header>
+            <div class="win-body">
+              <div class="meet-stage">Dr. Amina will let you in</div>
+              <p style="margin-top:10px;font-size:.85rem;color:var(--mute)"><span class="dot"></span> Camera ready · Connection good</p>
+            </div>
           </div>
         </div>
-        <form class="form glass reveal" id="contactForm" novalidate>
-          <div class="field">
-            <label for="cName">Name</label>
-            <input type="text" id="cName" name="name" placeholder="Jane Doe" autocomplete="name" required />
-          </div>
-          <div class="field">
-            <label for="cEmail">Email</label>
-            <input type="email" id="cEmail" name="email" placeholder="jane@company.com" autocomplete="email" required />
-          </div>
-          <div class="field">
-            <label for="cSubject">Subject</label>
-            <input type="text" id="cSubject" name="subject" placeholder="I'd like to migrate my site" />
-          </div>
-          <div class="field">
-            <label for="cMessage">Message</label>
-            <textarea id="cMessage" name="message" rows="5" placeholder="Tell us what you need…" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block">Send Message</button>
-          <p class="form-status" id="contactStatus" role="status" aria-live="polite"></p>
-        </form>
       </div>
     </section>
 
-    <!-- CTA banner -->
-    <section class="cta-banner">
-      <div class="container cta-inner reveal">
-        <h2>Ready to launch faster?</h2>
-        <p>Start today with a 30-day money-back guarantee. No risk, all speed.</p>
-        <a href="#pricing" class="btn btn-primary btn-lg">Get Started Now</a>
+    <section class="section" style="padding-top:20px">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="kicker">On the shelf</span>
+            <h2>A few things we already ship.</h2>
+            <p>Each one is a product you can download. Categories below if you want to browse the whole room.</p>
+          </div>
+          <a class="btn btn-ghost" href="/catalog">All software</a>
+        </div>
+        <div class="grid" id="featured"></div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <span class="kicker">Rooms</span>
+        <h2>Browse by kind of work.</h2>
+        <div class="cats" id="home-cats" style="margin-top:22px"></div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:20px">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="kicker">The arrangement</span>
+            <h2>Pay. Download. Host it.</h2>
+          </div>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <span class="num">01</span>
+            <h3>Choose a product</h3>
+            <p>Pick an edition and a package — Docker, Linux, or Windows where we have it.</p>
+          </article>
+          <article class="step">
+            <span class="num">02</span>
+            <h3>Take the kit home</h3>
+            <p>You download a starter kit. Compose file, license note, and the steps to bring it up.</p>
+          </article>
+          <article class="step">
+            <span class="num">03</span>
+            <h3>It runs on your server</h3>
+            <p>Your domain, your disk, your backup. We don’t keep a copy of the work you do inside it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <div>
+          <h2>Need it to wear your name?</h2>
+          <p>White-label editions drop our mark. We can also sit with you on install — write to the studio.</p>
+        </div>
+        <a class="btn btn-forest" href="/contact">Talk to the studio</a>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a href="#home" class="brand"><span class="brand-mark">⚡</span><span class="brand-name">Fo<span>Digits</span></span></a>
-        <p>Fast, secure and scalable cloud hosting for everyone — from first blog to global platform.</p>
-      </div>
-      <div class="footer-col">
-        <h5>Products</h5>
-        <a href="#services">Shared Hosting</a>
-        <a href="#services">VPS Hosting</a>
-        <a href="#services">Cloud Hosting</a>
-        <a href="#services">Dedicated Servers</a>
-      </div>
-      <div class="footer-col">
-        <h5>Company</h5>
-        <a href="#features">Why Us</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h5>Support</h5>
-        <a href="mailto:support@fodigits.com">support@fodigits.com</a>
-        <a href="#feedback">Give Feedback</a>
-        <a href="#contact">Open a Ticket</a>
-        <a href="#home">Status</a>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <p>© <span id="year"></span> FoDigits Hosting. All rights reserved.</p>
-      <p>Made with ⚡ on NVMe · 99.99% uptime</p>
-    </div>
-  </footer>
-
-  <a href="#home" class="to-top" id="toTop" aria-label="Back to top">↑</a>
-
-  <script src="/js/main.js" defer></script>
+  <footer class="site-footer" id="site-footer"></footer>
+  <script src="/js/site.js"></script>
+  <script src="/js/store.js"></script>
+  <script>
+    FoStore.loadCatalog().then(function (data) {
+      FoStore.renderGrid(document.getElementById("featured"), data.products.filter(function (p) { return p.featured; }), data.categories);
+      document.getElementById("home-cats").innerHTML = data.categories.map(function (c) {
+        return '<a class="cat" href="/catalog?cat=' + c.id + '">' + c.name + "</a>";
+      }).join("");
+    });
+  </script>
 </body>
 </html>
