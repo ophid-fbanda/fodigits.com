@@ -12,7 +12,6 @@
         <a href="/licenses" data-nav="/licenses">Licenses</a>
         <a href="/about" data-nav="/about">About</a>
         <a href="/contact" data-nav="/contact">Contact</a>
-        <a class="btn btn-primary" href="/catalog">View products</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>`;
