@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deployment — FoDigits</title>
+  <title>Install — FoDigits</title>
   <link rel="stylesheet" href="/css/site.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%234f7dff' width='32' height='32' rx='8'/%3E%3Ctext x='9' y='22' fill='white' font-family='Arial' font-weight='700' font-size='16'%3EF%3C/text%3E%3C/svg%3E" />
 </head>
@@ -13,40 +13,39 @@
     <section class="page-hero">
       <div class="wrap">
         <span class="kicker">Install</span>
-        <h1>Install with Docker Compose.</h1>
-        <p>Each product ships as a stack: application, database, and reverse proxy. You run it on your VPS or on-prem server.</p>
+        <h1>Pick the package listed on the product.</h1>
+        <p>Not every app ships the same way. The product page shows Docker Compose, Linux, and/or Windows. Use only what is listed there.</p>
       </div>
     </section>
     <section class="section" style="padding-top:12px">
       <div class="wrap steps">
         <article class="step">
           <span class="num">01</span>
-          <h3>Select product and edition</h3>
-          <p>Open the product page. Choose Home, Pro, or White-label, then Docker Compose (recommended), Linux, or Windows.</p>
+          <h3>Docker Compose</h3>
+          <p>Where offered: copy .env.example to .env, set LICENSE_KEY, run <code>docker compose up -d</code>. Compose starts the services in that product’s stack.</p>
         </article>
         <article class="step">
           <span class="num">02</span>
-          <h3>Download the package</h3>
-          <p>The archive includes docker-compose.yml, .env.example, license terms, and a README with exact commands.</p>
+          <h3>Linux</h3>
+          <p>Where offered: unpack the archive, run the install script in the README, set the license in the env file, start the service with systemd.</p>
         </article>
         <article class="step">
           <span class="num">03</span>
-          <h3>Start the stack</h3>
-          <p>Copy .env.example to .env, set LICENSE_KEY and APP_URL, then run <code>docker compose up -d</code>. Open your domain.</p>
+          <h3>Windows</h3>
+          <p>Where offered: run the installer, enter the license key, start the app from the Start menu or as a Windows service.</p>
         </article>
       </div>
     </section>
     <section class="section" style="padding-top:0">
       <div class="wrap split prose">
         <div>
-          <h2>What you need</h2>
-          <p>Docker Engine and the Compose plugin. CPU and RAM as listed on the product page. A domain and TLS for public access.</p>
-          <p>Compose pulls images and starts every service in the stack. You do not install the application runtime on the host.</p>
+          <h2>Requirements</h2>
+          <p>Each product page lists CPU, RAM, and which packages exist. Match the host to that list before you download.</p>
         </div>
         <div>
-          <h2>What’s in the package</h2>
-          <p>docker-compose.yml, environment template, license file, and install notes. Runtime images download on first launch.</p>
-          <p>Need a guided install? Contact sales for onboarding.</p>
+          <h2>After download</h2>
+          <p>Open the README in the package. That file is the source of truth for that build.</p>
+          <p>Need install help? Contact sales.</p>
         </div>
       </div>
     </section>
