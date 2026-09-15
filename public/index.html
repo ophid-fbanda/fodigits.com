@@ -3,69 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="FoDigits makes software you download and host yourself — asset registers, private meetings, clinic desks, and more." />
-  <title>FoDigits — Software you run yourself</title>
+  <meta name="description" content="FoDigits — modern self-hosted software. Download it, run it on your own server." />
+  <title>FoDigits — Self-hosted software</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Outfit:wght@400;500;600;650&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/site.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%232a4b3d' width='32' height='32' rx='8'/%3E%3Ctext x='8' y='23' fill='%23f4efe6' font-family='Georgia' font-size='18'%3EF%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%234f8cff' width='32' height='32' rx='8'/%3E%3Ctext x='9' y='22' fill='white' font-family='Arial' font-weight='700' font-size='16'%3EF%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
   <header class="site-header" id="site-header"></header>
-
   <main>
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <span class="kicker">A software studio</span>
-          <h1>Tools you take home and run on your own machines.</h1>
+          <span class="kicker">Self-hosted products</span>
+          <h1>Software you download. Infrastructure you own.</h1>
           <p class="lede">
-            FoDigits builds small, finished products — asset registers, private video rooms, clinic desks —
-            that you download, pay for, and host yourself. Your data stays where you put it.
+            Modern apps for operations, meetings, clinics, and teams — packaged to run on your server.
+            Buy a license, download the kit, go live on your domain.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-forest" href="/catalog">See the catalog</a>
-            <a class="btn btn-ghost" href="/how-it-works">How hosting it yourself works</a>
+            <a class="btn btn-primary" href="/catalog">Browse products</a>
+            <a class="btn btn-ghost" href="/how-it-works">See how it works</a>
           </div>
-          <p class="hero-note">Docker or Linux packages. White-label when you need your name on the door.</p>
+          <div class="stats">
+            <div class="stat"><b>12</b><span>Products</span></div>
+            <div class="stat"><b>10</b><span>Categories</span></div>
+            <div class="stat"><b>3</b><span>Editions</span></div>
+          </div>
         </div>
-        <div class="collage" aria-hidden="true">
-          <div class="window w3">
-            <header><i></i><i></i><i></i><span>People</span></header>
-            <div class="win-body">
-              <span class="chip">12 on leave</span>
-            </div>
-          </div>
-          <div class="window w1">
-            <header><i></i><i></i><i></i><span>FoDigits Assets · Register</span></header>
-            <div class="win-body">
-              <div class="fake-row"><strong>Generator 4kVA</strong><span>Workshop · Amina</span></div>
-              <div class="fake-row"><strong>Laptop · T480</strong><span>Office · Daniel</span></div>
-              <div class="fake-row"><strong>Ultrasound cart</strong><span>Clinic · Bay 2</span></div>
-              <div class="fake-row"><strong>School projector</strong><span>Hall · Checked in</span></div>
-            </div>
-          </div>
-          <div class="window w2">
-            <header><i></i><i></i><i></i><span>Meet · Waiting room</span></header>
-            <div class="win-body">
-              <div class="meet-stage">Dr. Amina will let you in</div>
-              <p style="margin-top:10px;font-size:.85rem;color:var(--mute)"><span class="dot"></span> Camera ready · Connection good</p>
-            </div>
+        <div class="device" aria-hidden="true">
+          <div class="device-bar"><i></i><i></i><i></i><span>fodigits.app / live</span></div>
+          <div class="device-body">
+            <div class="call"><span><i class="live"></i>Meet · waiting room<br />Patient is ready</span></div>
+            <div class="row"><span><b>Ultrasound cart</b><br /><small>Clinic · Bay 2</small></span><span class="av" style="background:#4f8cff">A</span></div>
+            <div class="row"><span><b>Ticket #1842</b><br /><small>Desk · high priority</small></span><span class="av" style="background:#a78bfa">D</span></div>
+            <div class="row"><span><b>Invoice paid</b><br /><small>Books · $1,240</small></span><span class="av" style="background:#34d399">B</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" style="padding-top:20px">
+    <section class="section">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <span class="kicker">On the shelf</span>
-            <h2>A few things we already ship.</h2>
-            <p>Each one is a product you can download. Categories below if you want to browse the whole room.</p>
+            <span class="kicker">Featured</span>
+            <h2>Start with these.</h2>
+            <p>Flagship apps first. The full catalog is one click away.</p>
           </div>
-          <a class="btn btn-ghost" href="/catalog">All software</a>
+          <a class="btn btn-ghost" href="/catalog">View all</a>
         </div>
         <div class="grid" id="featured"></div>
       </div>
@@ -73,35 +61,35 @@
 
     <section class="section" style="padding-top:0">
       <div class="wrap">
-        <span class="kicker">Rooms</span>
-        <h2>Browse by kind of work.</h2>
+        <span class="kicker">Categories</span>
+        <h2>Find the right tool.</h2>
         <div class="cats" id="home-cats" style="margin-top:22px"></div>
       </div>
     </section>
 
-    <section class="section" style="padding-top:20px">
+    <section class="section" style="padding-top:10px">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <span class="kicker">The arrangement</span>
-            <h2>Pay. Download. Host it.</h2>
+            <span class="kicker">Workflow</span>
+            <h2>Pay. Download. Host.</h2>
           </div>
         </div>
         <div class="steps">
           <article class="step">
             <span class="num">01</span>
-            <h3>Choose a product</h3>
-            <p>Pick an edition and a package — Docker, Linux, or Windows where we have it.</p>
+            <h3>Pick a product</h3>
+            <p>Choose Home, Pro, or White-label. Select Docker, Linux, or Windows.</p>
           </article>
           <article class="step">
             <span class="num">02</span>
-            <h3>Take the kit home</h3>
-            <p>You download a starter kit. Compose file, license note, and the steps to bring it up.</p>
+            <h3>Download the kit</h3>
+            <p>Get a real package: compose file, env example, license, install notes.</p>
           </article>
           <article class="step">
             <span class="num">03</span>
-            <h3>It runs on your server</h3>
-            <p>Your domain, your disk, your backup. We don’t keep a copy of the work you do inside it.</p>
+            <h3>Run it yourself</h3>
+            <p>Your VPS, your domain, your data. We never host the work inside the app.</p>
           </article>
         </div>
       </div>
@@ -109,15 +97,16 @@
 
     <section class="band">
       <div class="wrap">
-        <div>
-          <h2>Need it to wear your name?</h2>
-          <p>White-label editions drop our mark. We can also sit with you on install — write to the studio.</p>
+        <div class="inner">
+          <div>
+            <h2>Need it under your brand?</h2>
+            <p>White-label editions remove FoDigits from the UI. We can also help you install.</p>
+          </div>
+          <a class="btn btn-primary" href="/contact">Talk to us</a>
         </div>
-        <a class="btn btn-forest" href="/contact">Talk to the studio</a>
       </div>
     </section>
   </main>
-
   <footer class="site-footer" id="site-footer"></footer>
   <script src="/js/site.js"></script>
   <script src="/js/store.js"></script>

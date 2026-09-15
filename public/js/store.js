@@ -14,10 +14,12 @@
 
   function card(p, categories) {
     const badge = p.badge ? `<span class="pill">${p.badge}</span>` : "";
+    const letter = p.name.replace("FoDigits ", "").slice(0, 1);
+    const tone = p.tone || "#4f8cff";
     return `
       <article class="card">
         <a href="/product?p=${encodeURIComponent(p.slug)}" class="card-art" aria-hidden="true">
-          <span class="mark">${p.name.replace("FoDigits ", "").slice(0, 1)}</span>
+          <span class="orb" style="background:${tone}">${letter}</span>
         </a>
         <div class="card-body">
           <div class="meta">
