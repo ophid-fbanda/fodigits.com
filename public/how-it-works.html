@@ -3,53 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How it works — FoDigits</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <title>Deployment — FoDigits</title>
   <link rel="stylesheet" href="/css/site.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%234f8cff' width='32' height='32' rx='8'/%3E%3Ctext x='9' y='22' fill='white' font-family='Arial' font-weight='700' font-size='16'%3EF%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%234f7dff' width='32' height='32' rx='8'/%3E%3Ctext x='9' y='22' fill='white' font-family='Arial' font-weight='700' font-size='16'%3EF%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
   <header class="site-header" id="site-header"></header>
   <main>
     <section class="page-hero">
       <div class="wrap">
-        <span class="kicker">The arrangement</span>
-        <h1>You keep the keys.</h1>
-        <p>We write the software. You run it. That is the whole idea — the same whether it is an asset book or a video room.</p>
+        <span class="kicker">Deployment</span>
+        <h1>Install with Docker Compose.</h1>
+        <p>Each product ships as a stack: application, database, and reverse proxy. You run it on your VPS or on-prem server.</p>
       </div>
     </section>
     <section class="section" style="padding-top:12px">
       <div class="wrap steps">
         <article class="step">
           <span class="num">01</span>
-          <h3>Pick from the catalog</h3>
-          <p>Each product has editions: Home for a small place, Pro for a working office, White-label when the product should wear your name.</p>
+          <h3>Select product and edition</h3>
+          <p>Open the product page. Choose Home, Pro, or White-label, then Docker Compose (recommended), Linux, or Windows.</p>
         </article>
         <article class="step">
           <span class="num">02</span>
-          <h3>Download a package</h3>
-          <p>You get a starter kit — compose file, license note, environment example. The browser treats it as a real download because it is one.</p>
+          <h3>Download the package</h3>
+          <p>The archive includes docker-compose.yml, .env.example, license terms, and a README with exact commands.</p>
         </article>
         <article class="step">
           <span class="num">03</span>
-          <h3>Bring it up locally</h3>
-          <p>On a VPS, a machine in the back office, or a clinic cupboard. HTTPS on your domain. Backups on your disk.</p>
+          <h3>Start the stack</h3>
+          <p>Copy .env.example to .env, set LICENSE_KEY and APP_URL, then run <code>docker compose up -d</code>. Open your domain.</p>
         </article>
       </div>
     </section>
     <section class="section" style="padding-top:0">
       <div class="wrap split prose">
         <div>
-          <h2>What we do not do</h2>
-          <p>We do not host your patients, your stock, or your meetings. We do not keep a copy of the work you do inside the product.</p>
-          <p>If you later want us to install it for you, that is a separate conversation — not the default.</p>
+          <h2>What you need</h2>
+          <p>Docker Engine and the Compose plugin. CPU and RAM as listed on the product page. A domain and TLS for public access.</p>
+          <p>Compose pulls images and starts every service in the stack. You do not install the application runtime on the host.</p>
         </div>
         <div>
-          <h2>What a kit contains</h2>
-          <p>README, license, docker-compose, and an env example. Runtime images are meant to pull on first launch once a license is in place.</p>
-          <p>Requirements are listed on every product page so you can size the box before you start.</p>
+          <h2>What’s in the package</h2>
+          <p>docker-compose.yml, environment template, license file, and install notes. Runtime images download on first launch.</p>
+          <p>Need a guided install? Contact sales for onboarding.</p>
         </div>
       </div>
     </section>

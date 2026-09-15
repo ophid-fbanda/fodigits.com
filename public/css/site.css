@@ -256,6 +256,7 @@ h3 { font-size: 1.25rem; }
 .ok { color: var(--ok); }
 .err { color: var(--err); }
 .gone { padding: 90px 0 120px; text-align: center; }
+code { font-family: var(--mono); font-size: .86em; background: rgba(255,255,255,.06); padding: 2px 6px; border-radius: 6px; }
 
 /* Boot splash — product, not brochure */
 .splash {

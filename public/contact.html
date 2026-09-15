@@ -4,26 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — FoDigits</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/site.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%234f8cff' width='32' height='32' rx='8'/%3E%3Ctext x='9' y='22' fill='white' font-family='Arial' font-weight='700' font-size='16'%3EF%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%234f7dff' width='32' height='32' rx='8'/%3E%3Ctext x='9' y='22' fill='white' font-family='Arial' font-weight='700' font-size='16'%3EF%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
   <header class="site-header" id="site-header"></header>
   <main>
     <section class="page-hero">
       <div class="wrap">
-        <span class="kicker">The desk</span>
-        <h1>Write to the studio.</h1>
+        <span class="kicker">Contact</span>
+        <h1>Sales and support.</h1>
       </div>
     </section>
     <section>
       <div class="wrap split">
         <div class="prose">
-          <p>Licenses, white-label, or a product that is not on the shelf yet — send a note. We read them.</p>
-          <p><strong>Studio</strong><br /><a href="mailto:hello@fodigits.com">hello@fodigits.com</a></p>
+          <p>Licensing, white-label, volume quotes, and install onboarding.</p>
+          <p><strong>Sales</strong><br /><a href="mailto:sales@fodigits.com">sales@fodigits.com</a></p>
           <p><strong>Support</strong><br /><a href="mailto:support@fodigits.com">support@fodigits.com</a></p>
         </div>
         <form class="form-card" id="contactForm">
@@ -37,13 +34,13 @@
           </div>
           <div class="field">
             <label for="subject">Subject</label>
-            <input id="subject" name="subject" placeholder="White-label for Clinic" />
+            <input id="subject" name="subject" placeholder="White-label · Clinic" />
           </div>
           <div class="field">
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
-          <button class="btn btn-primary btn-block" type="submit">Send</button>
+          <button class="btn btn-primary btn-block" type="submit">Send message</button>
           <p class="status" id="contactStatus" role="status"></p>
         </form>
       </div>
@@ -65,7 +62,7 @@
           status.className = "status " + (res.ok && res.j.ok ? "ok" : "err");
           if (res.ok && res.j.ok) e.target.reset();
         })
-        .catch(function () { status.textContent = "Network error."; status.className = "status err"; })
+        .catch(function () { status.textContent = "Could not send. Try email."; status.className = "status err"; })
         .finally(function () { btn.disabled = false; });
     });
   </script>

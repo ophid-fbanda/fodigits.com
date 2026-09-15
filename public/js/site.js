@@ -9,11 +9,11 @@
       <nav class="nav-links" id="navLinks">
         <a href="/" data-nav="/">Home</a>
         <a href="/catalog" data-nav="/catalog">Products</a>
-        <a href="/how-it-works" data-nav="/how-it-works">How it works</a>
+        <a href="/how-it-works" data-nav="/how-it-works">Deploy</a>
         <a href="/licenses" data-nav="/licenses">Licenses</a>
         <a href="/about" data-nav="/about">About</a>
         <a href="/contact" data-nav="/contact">Contact</a>
-        <a class="btn btn-primary" href="/catalog">Get software</a>
+        <a class="btn btn-primary" href="/catalog">View products</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>`;
@@ -24,7 +24,7 @@
         <div>
           <a class="brand" href="/"><span class="brand-mark">F</span>Fo<em>Digits</em></a>
           <p class="prose" style="margin-top:12px;max-width:280px">
-            Self-hosted software for teams who want the product — and the keys.
+            Business software deployed on your infrastructure.
           </p>
         </div>
         <div>
@@ -36,7 +36,7 @@
         </div>
         <div>
           <h5>Company</h5>
-          <a href="/how-it-works">How it works</a>
+          <a href="/how-it-works">Deployment</a>
           <a href="/licenses">Licenses</a>
           <a href="/about">About</a>
         </div>
@@ -76,7 +76,7 @@
     sessionStorage.setItem("fd-booted", "1");
     const splash = document.createElement("div");
     splash.className = "splash";
-    splash.innerHTML = '<div class="splash-box"><div class="splash-logo">F</div><div class="splash-track"><i id="spFill"></i></div><div class="splash-meta"><span>Initializing</span><span id="spPct">0%</span></div></div>';
+    splash.innerHTML = '<div class="splash-box"><div class="splash-logo">F</div><div class="splash-track"><i id="spFill"></i></div><div class="splash-meta"><span>Loading</span><span id="spPct">0%</span></div></div>';
     document.body.appendChild(splash);
     const fill = splash.querySelector("#spFill");
     const pct = splash.querySelector("#spPct");

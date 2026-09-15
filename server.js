@@ -126,7 +126,7 @@ app.post("/api/contact", (req, res) => {
   });
   writeJson(CONTACT_FILE, list);
 
-  return res.json({ ok: true, message: "Received. We’ll write back shortly." });
+  return res.json({ ok: true, message: "Message sent. Sales will reply shortly." });
 });
 
 app.get("/api/health", (req, res) => {

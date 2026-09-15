@@ -30,7 +30,7 @@
           <ul>${feats}</ul>
           <div class="card-foot">
             <span>v${p.version}</span>
-            <a href="/product?p=${encodeURIComponent(p.slug)}">View &amp; download →</a>
+            <a href="/product?p=${encodeURIComponent(p.slug)}">Download →</a>
           </div>
         </div>
       </article>`;
@@ -39,7 +39,7 @@
   function renderGrid(el, products, categories) {
     if (!el) return;
     if (!products.length) {
-      el.innerHTML = `<p class="prose">Nothing in this shelf yet. Try another category.</p>`;
+      el.innerHTML = `<p class="prose">No products match these filters.</p>`;
       return;
     }
     el.innerHTML = products.map((p) => card(p, categories)).join("");
@@ -86,7 +86,7 @@
       setTimeout(function () {
         clearInterval(tick);
         fill.style.width = "100%";
-        status.textContent = "Download started — check your browser’s downloads.";
+        status.textContent = "Download started.";
         status.className = "status ok";
         btn.disabled = false;
         setTimeout(function () { iframe.remove(); }, 8000);
