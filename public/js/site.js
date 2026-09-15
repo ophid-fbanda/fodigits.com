@@ -57,7 +57,7 @@
 
   document.querySelectorAll("[data-nav]").forEach((a) => {
     const n = a.getAttribute("data-nav");
-    if (n === path || (n === "/catalog" && path.startsWith("/product"))) a.classList.add("is-on");
+    if (n === path || n === "/#products" && (path === "/" || path === "") || (path.startsWith("/product"))) a.classList.add("is-on");
   });
 
   const toggle = document.getElementById("navToggle");

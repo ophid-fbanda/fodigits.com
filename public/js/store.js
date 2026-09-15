@@ -14,7 +14,7 @@
 
   function card(p, categories) {
     const badge = p.badge ? `<span class="pill">${p.badge}</span>` : "";
-    const letter = p.name.replace("FoDigits ", "").slice(0, 1);
+    const letter = p.name.slice(0, 1);
     const tone = p.tone || "#4f8cff";
     const feats = (p.highlights || []).slice(0, 3).map((h) => `<li>${h}</li>`).join("");
     return `
