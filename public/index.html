@@ -3,57 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="FoDigits — modern self-hosted software. Download it, run it on your own server." />
+  <meta name="description" content="FoDigits builds self-hosted software you download and run on your own servers." />
   <title>FoDigits — Self-hosted software</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/site.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%234f8cff' width='32' height='32' rx='8'/%3E%3Ctext x='9' y='22' fill='white' font-family='Arial' font-weight='700' font-size='16'%3EF%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%234f7dff' width='32' height='32' rx='8'/%3E%3Ctext x='9' y='22' fill='white' font-family='Arial' font-weight='700' font-size='16'%3EF%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
   <header class="site-header" id="site-header"></header>
   <main>
     <section class="hero">
       <div class="wrap hero-grid">
-        <div>
+        <div class="reveal">
           <span class="kicker">Self-hosted products</span>
-          <h1>Software you download. Infrastructure you own.</h1>
+          <h1>Software you download and run on your own machines.</h1>
           <p class="lede">
-            Modern apps for operations, meetings, clinics, and teams — packaged to run on your server.
-            Buy a license, download the kit, go live on your domain.
+            Asset registers, private video rooms, clinic desks, and more — packaged to install on
+            a server you control. You pay, you download, you host it.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="/catalog">Browse products</a>
-            <a class="btn btn-ghost" href="/how-it-works">See how it works</a>
+            <a class="btn btn-ghost" href="/how-it-works">How it works</a>
           </div>
-          <div class="stats">
-            <div class="stat"><b>12</b><span>Products</span></div>
-            <div class="stat"><b>10</b><span>Categories</span></div>
-            <div class="stat"><b>3</b><span>Editions</span></div>
+          <div class="hero-badges">
+            <span>Docker &amp; Linux kits</span>
+            <span>Your domain</span>
+            <span>White-label editions</span>
+            <span>No tenant cloud</span>
           </div>
         </div>
-        <div class="device" aria-hidden="true">
-          <div class="device-bar"><i></i><i></i><i></i><span>fodigits.app / live</span></div>
-          <div class="device-body">
-            <div class="call"><span><i class="live"></i>Meet · waiting room<br />Patient is ready</span></div>
-            <div class="row"><span><b>Ultrasound cart</b><br /><small>Clinic · Bay 2</small></span><span class="av" style="background:#4f8cff">A</span></div>
-            <div class="row"><span><b>Ticket #1842</b><br /><small>Desk · high priority</small></span><span class="av" style="background:#a78bfa">D</span></div>
-            <div class="row"><span><b>Invoice paid</b><br /><small>Books · $1,240</small></span><span class="av" style="background:#34d399">B</span></div>
+        <div class="visual reveal">
+          <div class="chip chip-1">Meet · waiting room</div>
+          <div class="chip chip-2">Assets live</div>
+          <div class="chip chip-3">Self-hosted</div>
+          <div class="device">
+            <div class="device-bar"><i></i><i></i><i></i><span>fodigits.app</span></div>
+            <div class="device-body">
+              <div class="call"><span><i class="live"></i>Consult in progress<br />Clinic · FoDigits Meet</span></div>
+              <div class="row"><span><b>Ultrasound cart</b><br /><small>Assets · Bay 2</small></span><span class="av" style="background:#4f7dff">A</span></div>
+              <div class="row"><span><b>Ticket #1842</b><br /><small>Desk · high</small></span><span class="av" style="background:#a78bfa">D</span></div>
+              <div class="row"><span><b>Invoice paid</b><br /><small>Books · $1,240</small></span><span class="av" style="background:#34d399">B</span></div>
+            </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="stats-strip reveal">
+          <div class="stat"><b>12</b><span>Products</span></div>
+          <div class="stat"><b>10</b><span>Categories</span></div>
+          <div class="stat"><b>3</b><span>Editions</span></div>
+          <div class="stat"><b>1</b><span>Machine: yours</span></div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="kicker">Featured</span>
-            <h2>Start with these.</h2>
-            <p>Flagship apps first. The full catalog is one click away.</p>
-          </div>
-          <a class="btn btn-ghost" href="/catalog">View all</a>
+        <div class="section-head reveal">
+          <span class="kicker">Featured</span>
+          <h2>Start with these.</h2>
+          <p>Flagship apps first. The rest of the catalog is one click away.</p>
         </div>
         <div class="grid" id="featured"></div>
       </div>
@@ -61,35 +72,37 @@
 
     <section class="section" style="padding-top:0">
       <div class="wrap">
-        <span class="kicker">Categories</span>
-        <h2>Find the right tool.</h2>
-        <div class="cats" id="home-cats" style="margin-top:22px"></div>
+        <div class="section-head reveal">
+          <span class="kicker">Categories</span>
+          <h2>Find the right tool.</h2>
+          <p>Operations, meetings, healthcare, and the rest of the work.</p>
+        </div>
+        <div class="cats" id="home-cats" style="justify-content:center"></div>
       </div>
     </section>
 
     <section class="section" style="padding-top:10px">
       <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="kicker">Workflow</span>
-            <h2>Pay. Download. Host.</h2>
-          </div>
+        <div class="section-head reveal">
+          <span class="kicker">Workflow</span>
+          <h2>Pay. Download. Host.</h2>
+          <p>Same path for every product in the catalog.</p>
         </div>
         <div class="steps">
-          <article class="step">
+          <article class="step reveal">
             <span class="num">01</span>
             <h3>Pick a product</h3>
             <p>Choose Home, Pro, or White-label. Select Docker, Linux, or Windows.</p>
           </article>
-          <article class="step">
+          <article class="step reveal">
             <span class="num">02</span>
             <h3>Download the kit</h3>
-            <p>Get a real package: compose file, env example, license, install notes.</p>
+            <p>A real package: compose file, env example, license, install notes.</p>
           </article>
-          <article class="step">
+          <article class="step reveal">
             <span class="num">03</span>
             <h3>Run it yourself</h3>
-            <p>Your VPS, your domain, your data. We never host the work inside the app.</p>
+            <p>Your VPS, your domain, your data. We don’t host what’s inside the app.</p>
           </article>
         </div>
       </div>
@@ -97,7 +110,7 @@
 
     <section class="band">
       <div class="wrap">
-        <div class="inner">
+        <div class="inner reveal">
           <div>
             <h2>Need it under your brand?</h2>
             <p>White-label editions remove FoDigits from the UI. We can also help you install.</p>

@@ -16,18 +16,18 @@
     const badge = p.badge ? `<span class="pill">${p.badge}</span>` : "";
     const letter = p.name.replace("FoDigits ", "").slice(0, 1);
     const tone = p.tone || "#4f8cff";
+    const feats = (p.highlights || []).slice(0, 3).map((h) => `<li>${h}</li>`).join("");
     return `
-      <article class="card">
-        <a href="/product?p=${encodeURIComponent(p.slug)}" class="card-art" aria-hidden="true">
-          <span class="orb" style="background:${tone}">${letter}</span>
-        </a>
+      <article class="card reveal">
         <div class="card-body">
+          <span class="orb" style="background:${tone}">${letter}</span>
           <div class="meta">
             <span class="tag">${categoryName(categories, p.category)}</span>
             ${badge}
           </div>
           <h3><a href="/product?p=${encodeURIComponent(p.slug)}">${p.name}</a></h3>
           <p>${p.short}</p>
+          <ul>${feats}</ul>
           <div class="card-foot">
             <span>v${p.version}</span>
             <a href="/product?p=${encodeURIComponent(p.slug)}">View &amp; download →</a>
