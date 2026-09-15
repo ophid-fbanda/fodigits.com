@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FoDigits — the operating suite for organizations. Download the product you need." />
+  <title>FoDigits — The operating suite</title>
+  <link rel="stylesheet" href="/css/site.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%234f7dff' width='32' height='32' rx='8'/%3E%3Ctext x='9' y='22' fill='white' font-family='Arial' font-weight='700' font-size='16'%3EF%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-copy">
+        <div class="reveal">
+          <span class="kicker">FoDigits</span>
+          <h1>The operating suite for your organization.</h1>
+          <p class="lede">
+            One catalog. Every function. Download the product you need.
+          </p>
+          <div class="hero-badges">
+            <span>Docker Compose</span>
+            <span>Linux packages</span>
+            <span>White-label</span>
+            <span>On-prem ready</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="stats-strip reveal">
+          <div class="stat"><b>12</b><span>Products</span></div>
+          <div class="stat"><b>10</b><span>Categories</span></div>
+          <div class="stat"><b>3</b><span>Editions</span></div>
+          <div class="stat"><b>24/7</b><span>Support on Pro</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>Products</h2>
+        </div>
+        <input class="search" id="home-q" type="search" placeholder="Search name, category, or version…" />
+        <div class="cats" id="home-cats" style="justify-content:center;margin:18px 0 28px"></div>
+        <p id="home-count" style="margin:0 0 16px;color:var(--mute);text-align:center"></p>
+        <div class="grid" id="featured"></div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <div class="inner reveal">
+          <div>
+            <h2>Ship it under your brand</h2>
+            <p>White-label editions remove FoDigits from the interface. Sales can quote install and onboarding.</p>
+          </div>
+          <a class="btn btn-primary" href="/contact">Contact sales</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" id="site-footer"></footer>
+  <script src="/js/site.js"></script>
+  <script src="/js/store.js"></script>
+  <script>
+    FoStore.loadCatalog().then(function (data) {
+      var current = "all";
+      var query = "";
+      var cats = [{ id: "all", name: "All" }].concat(data.categories);
+      function paint() {
+        var list = data.products.filter(function (p) {
+          var inCat = current === "all" || p.category === current;
+          var hay = (p.name + " " + p.short + " " + p.category + " " + p.version).toLowerCase();
+          return inCat && (!query || hay.indexOf(query) !== -1);
+        });
+        FoStore.renderGrid(document.getElementById("featured"), list, data.categories);
+        document.getElementById("home-count").textContent = list.length + (list.length === 1 ? " product" : " products");
+        document.querySelectorAll("#home-cats .cat").forEach(function (el) {
+          el.classList.toggle("is-on", el.getAttribute("data-id") === current);
+        });
+      }
+      document.getElementById("home-cats").innerHTML = cats.map(function (c) {
+        return '<button type="button" class="cat" data-id="' + c.id + '">' + c.name + "</button>";
+      }).join("");
+      document.getElementById("home-cats").addEventListener("click", function (e) {
+        var btn = e.target.closest("[data-id]");
+        if (!btn) return;
+        current = btn.getAttribute("data-id");
+        paint();
+      });
+      document.getElementById("home-q").addEventListener("input", function (e) {
+        query = e.target.value.trim().toLowerCase();
+        paint();
+      });
+      paint();
+    });
+  </script>
+</body>
+</html>

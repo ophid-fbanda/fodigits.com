@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — FoDigits</title>
+  <link rel="stylesheet" href="/css/site.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%234f7dff' width='32' height='32' rx='8'/%3E%3Ctext x='9' y='22' fill='white' font-family='Arial' font-weight='700' font-size='16'%3EF%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="kicker">Contact</span>
+        <h1>Sales and support.</h1>
+      </div>
+    </section>
+    <section>
+      <div class="wrap split">
+        <div class="prose">
+          <p>Licensing, white-label, volume quotes, and install onboarding.</p>
+          <p><strong>Sales</strong><br /><a href="mailto:sales@fodigits.com">sales@fodigits.com</a></p>
+          <p><strong>Support</strong><br /><a href="mailto:support@fodigits.com">support@fodigits.com</a></p>
+        </div>
+        <form class="form-card" id="contactForm">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" placeholder="White-label · Clinic" />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Send message</button>
+          <p class="status" id="contactStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" id="site-footer"></footer>
+  <script src="/js/site.js"></script>
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var status = document.getElementById("contactStatus");
+      var btn = e.target.querySelector("button");
+      var data = Object.fromEntries(new FormData(e.target).entries());
+      btn.disabled = true;
+      fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
+        .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+        .then(function (res) {
+          status.textContent = res.j.message || res.j.error;
+          status.className = "status " + (res.ok && res.j.ok ? "ok" : "err");
+          if (res.ok && res.j.ok) e.target.reset();
+        })
+        .catch(function () { status.textContent = "Could not send. Try email."; status.className = "status err"; })
+        .finally(function () { btn.disabled = false; });
+    });
+  </script>
+</body>
+</html>
