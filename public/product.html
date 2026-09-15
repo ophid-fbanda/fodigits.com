@@ -44,6 +44,14 @@
         }).join("");
         var bullets = p.highlights.map(function (h) { return "<li>" + h + "</li>"; }).join("");
         var badge = p.badge ? '<span class="pill">' + p.badge + "</span>" : "";
+        var installCopy = {
+          docker: "<h3>Docker Compose</h3><p>Copy <code>.env.example</code> to <code>.env</code>. Set <code>LICENSE_KEY</code>. From the package folder run <code>docker compose up -d</code>.</p>",
+          linux: "<h3>Linux</h3><p>Unpack the archive. Follow the install script in the README. Enable the systemd unit. Set the license in the env file.</p>",
+          windows: "<h3>Windows</h3><p>Run the installer. Enter the license key. Start the app from the Start menu or as a Windows service.</p>"
+        };
+        var installBlocks = (p.platforms || []).map(function (x) {
+          return '<article class="step">' + (installCopy[x.id] || "<h3>" + x.label + "</h3><p>See the README in the package.</p>") + "</article>";
+        }).join("");
 
         root.innerHTML = `
           <section class="page-hero">
@@ -89,6 +97,14 @@
                 <p class="status" role="status"></p>
               </form>
             </aside>
+          </section>
+          <section class="section" style="padding-top:8px">
+            <div class="section-head">
+              <span class="kicker">Install ${p.name.replace("FoDigits ", "")}</span>
+              <h2>Packages for this product</h2>
+              <p>${p.requirements}</p>
+            </div>
+            <div class="steps">${installBlocks}</div>
           </section>`;
         FoStore.bindDownload(document.getElementById("dl"));
       }).catch(function () {
