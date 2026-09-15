@@ -32,13 +32,8 @@
         </div>
         <div class="visual reveal">
           <div class="device">
-            <div class="device-bar"><i></i><i></i><i></i><span>catalog</span></div>
-            <div class="device-body">
-              <div class="row"><span><b>Assets</b><br /><small>Operations · v2.6.1</small></span><span class="av" style="background:#4f7dff">↓</span></div>
-              <div class="row"><span><b>Meet</b><br /><small>Meetings · v1.4.2</small></span><span class="av" style="background:#22c55e">↓</span></div>
-              <div class="row"><span><b>Clinic</b><br /><small>Healthcare · v1.9.0</small></span><span class="av" style="background:#06b6d4">↓</span></div>
-              <div class="row"><span><b>Desk</b><br /><small>Support · v3.1.4</small></span><span class="av" style="background:#a78bfa">↓</span></div>
-            </div>
+            <div class="device-bar"><i></i><i></i><i></i><span>12 products</span></div>
+            <div class="device-body device-catalog" id="hero-catalog"></div>
           </div>
         </div>
       </div>
@@ -125,6 +120,12 @@
       document.getElementById("home-cats").innerHTML = data.categories.map(function (c) {
         return '<a class="cat" href="/catalog?cat=' + c.id + '">' + c.name + "</a>";
       }).join("");
+      var box = document.getElementById("hero-catalog");
+      if (box) {
+        box.innerHTML = data.products.map(function (p) {
+          return '<a class="row" href="/product?p=' + encodeURIComponent(p.slug) + '"><span><b>' + p.name.replace("FoDigits ", "") + '</b><br /><small>' + FoStore.categoryName(data.categories, p.category) + ' · v' + p.version + '</small></span><span class="av" style="background:' + (p.tone || "#4f7dff") + '">→</span></a>';
+        }).join("");
+      }
     });
   </script>
 </body>
