@@ -9,6 +9,7 @@
       <nav class="nav-links" id="navLinks">
         <a href="/" data-nav="/">Home</a>
         <a href="/catalog" data-nav="/catalog">Products</a>
+        <button type="button" class="nav-text" data-open-versions>Versions</button>
         <a href="/how-it-works" data-nav="/how-it-works">Deploy</a>
         <a href="/licenses" data-nav="/licenses">Licenses</a>
         <a href="/about" data-nav="/about">About</a>
@@ -130,4 +131,71 @@
   } else {
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
+
+  const panel = document.createElement("div");
+  panel.className = "vpanel";
+  panel.hidden = true;
+  panel.innerHTML = `
+    <div class="vpanel-card" role="dialog" aria-modal="true" aria-labelledby="vTitle">
+      <div class="vpanel-head">
+        <h2 id="vTitle">Versions</h2>
+        <button type="button" class="vpanel-x" data-close-versions aria-label="Close">×</button>
+      </div>
+      <input class="search" id="vQuery" type="search" placeholder="Search product or version…" />
+      <div class="vpanel-list" id="vList"></div>
+    </div>`;
+  document.body.appendChild(panel);
+
+  let catalogCache = null;
+  function renderVersions(q) {
+    if (!catalogCache) return;
+    const needle = (q || "").trim().toLowerCase();
+    const rows = catalogCache.products.filter(function (p) {
+      const hay = (p.name + " " + p.version + " " + p.category + " " + (p.short || "")).toLowerCase();
+      return !needle || hay.indexOf(needle) !== -1;
+    });
+    const list = document.getElementById("vList");
+    if (!rows.length) {
+      list.innerHTML = "<p class=\"prose\">No matches.</p>";
+      return;
+    }
+    list.innerHTML = rows.map(function (p) {
+      const cat = (catalogCache.categories.find(function (c) { return c.id === p.category; }) || {}).name || p.category;
+      return '<a class="vrow" href="/product?p=' + encodeURIComponent(p.slug) + '"><span><b>' + p.name + '</b><small>' + cat + '</small></span><strong>v' + p.version + '</strong></a>';
+    }).join("");
+  }
+
+  function openVersions() {
+    panel.hidden = false;
+    document.body.style.overflow = "hidden";
+    const input = document.getElementById("vQuery");
+    input.value = "";
+    const go = function () {
+      renderVersions("");
+      setTimeout(function () { input.focus(); }, 30);
+    };
+    if (catalogCache) go();
+    else {
+      var load = window.FoStore ? FoStore.loadCatalog() : fetch("/api/catalog").then(function (r) { return r.json(); });
+      load.then(function (data) { catalogCache = data; go(); });
+    }
+  }
+  function closeVersions() {
+    panel.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  document.addEventListener("click", function (e) {
+    if (e.target.closest("[data-open-versions]")) {
+      e.preventDefault();
+      openVersions();
+    }
+    if (e.target.closest("[data-close-versions]") || e.target === panel) closeVersions();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !panel.hidden) closeVersions();
+  });
+  document.getElementById("vQuery").addEventListener("input", function (e) {
+    renderVersions(e.target.value);
+  });
 })();

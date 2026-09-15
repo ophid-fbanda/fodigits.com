@@ -18,13 +18,13 @@
       <div class="wrap">
         <span class="kicker">Catalog</span>
         <h1>Products</h1>
-        <p>Twelve applications. Filter by category and download a Docker or Linux package.</p>
+        <p>Search by name, category, or version. Filter, then download a package.</p>
       </div>
     </section>
     <section>
       <div class="wrap" style="padding-bottom:80px">
         <div class="toolbar">
-          <input class="search" id="q" type="search" placeholder="Search the catalog…" />
+          <input class="search" id="q" type="search" placeholder="Search name, category, or version…" autofocus />
         </div>
         <div class="cats" id="cats"></div>
         <p id="count" style="margin:22px 0 16px;color:var(--mute)"></p>
@@ -39,15 +39,15 @@
     (function () {
       var params = new URLSearchParams(location.search);
       var current = params.get("cat") || "all";
-      var query = "";
+      var query = (params.get("q") || "").trim().toLowerCase();
 
       FoStore.loadCatalog().then(function (data) {
         var cats = [{ id: "all", name: "All" }].concat(data.categories);
         function paint() {
           var list = data.products.filter(function (p) {
             var inCat = current === "all" || p.category === current;
-            var hay = (p.name + " " + p.short + " " + p.category).toLowerCase();
-            return inCat && hay.indexOf(query) !== -1;
+            var hay = (p.name + " " + p.short + " " + p.category + " " + p.version + " " + (p.highlights || []).join(" ")).toLowerCase();
+            return inCat && (!query || hay.indexOf(query) !== -1);
           });
           FoStore.renderGrid(document.getElementById("grid"), list, data.categories);
           document.getElementById("count").textContent = list.length + (list.length === 1 ? " product" : " products");
@@ -69,8 +69,14 @@
           history.replaceState(null, "", url);
           paint();
         });
-        document.getElementById("q").addEventListener("input", function (e) {
+        var qEl = document.getElementById("q");
+        if (query) qEl.value = query;
+        qEl.addEventListener("input", function (e) {
           query = e.target.value.trim().toLowerCase();
+          var url = new URL(location.href);
+          if (query) url.searchParams.set("q", query);
+          else url.searchParams.delete("q");
+          history.replaceState(null, "", url);
           paint();
         });
         paint();

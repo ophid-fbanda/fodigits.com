@@ -21,6 +21,7 @@
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="/catalog">View products</a>
+            <button type="button" class="btn btn-ghost" data-open-versions>Versions</button>
             <a class="btn btn-ghost" href="/how-it-works">Deployment guide</a>
           </div>
           <div class="hero-badges">
@@ -31,9 +32,12 @@
           </div>
         </div>
         <div class="visual reveal">
-          <div class="device">
-            <div class="device-bar"><i></i><i></i><i></i><span>12 products</span></div>
-            <div class="device-body device-catalog" id="hero-catalog"></div>
+          <div class="device versions-cta">
+            <div class="device-bar"><i></i><i></i><i></i><span>releases</span></div>
+            <div class="device-body">
+              <p class="cta-copy">Current version for every product in the suite.</p>
+              <button type="button" class="btn btn-primary btn-block" data-open-versions>Versions</button>
+            </div>
           </div>
         </div>
       </div>
@@ -120,12 +124,6 @@
       document.getElementById("home-cats").innerHTML = data.categories.map(function (c) {
         return '<a class="cat" href="/catalog?cat=' + c.id + '">' + c.name + "</a>";
       }).join("");
-      var box = document.getElementById("hero-catalog");
-      if (box) {
-        box.innerHTML = data.products.map(function (p) {
-          return '<a class="row" href="/product?p=' + encodeURIComponent(p.slug) + '"><span><b>' + p.name.replace("FoDigits ", "") + '</b><br /><small>' + FoStore.categoryName(data.categories, p.category) + ' · v' + p.version + '</small></span><span class="av" style="background:' + (p.tone || "#4f7dff") + '">→</span></a>';
-        }).join("");
-      }
     });
   </script>
 </body>

@@ -69,8 +69,8 @@ h3 { font-size: 1.25rem; }
 }
 .brand em { font-style: normal; color: var(--accent); }
 .nav-links { display: flex; align-items: center; gap: 22px; font-size: .92rem; font-weight: 520; }
-.nav-links a { color: var(--mute); }
-.nav-links a:hover, .nav-links a.is-on { color: var(--text); }
+.nav-links a, .nav-text { color: var(--mute); background: none; border: 0; padding: 0; cursor: pointer; font: inherit; }
+.nav-links a:hover, .nav-links a.is-on, .nav-text:hover { color: var(--text); }
 .nav-toggle {
   display: none; width: 42px; height: 42px; border: 1px solid var(--line);
   background: var(--card); border-radius: 12px; cursor: pointer;
@@ -130,6 +130,7 @@ h3 { font-size: 1.25rem; }
   padding: 8px 12px; font-size: .86rem;
 }
 .row small { color: var(--mute); }
+.device-catalog .row { color: inherit; }
 .av {
   width: 28px; height: 28px; border-radius: 8px;
   display: grid; place-items: center; font-size: .75rem; font-weight: 700; color: #061018;
@@ -249,6 +250,31 @@ h3 { font-size: 1.25rem; }
 .err { color: var(--err); }
 .gone { padding: 90px 0 120px; text-align: center; }
 code { font-family: var(--mono); font-size: .86em; background: rgba(255,255,255,.06); padding: 2px 6px; border-radius: 6px; }
+.cta-copy { color: var(--mute); margin-bottom: 16px; }
+.versions-cta { min-height: 220px; display: flex; flex-direction: column; }
+.versions-cta .device-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 28px; }
+
+.vpanel {
+  position: fixed; inset: 0; z-index: 90; background: rgba(5,8,16,.72);
+  display: grid; place-items: center; padding: 24px;
+}
+.vpanel[hidden] { display: none; }
+.vpanel-card {
+  width: min(560px, 100%); max-height: min(80vh, 720px);
+  background: #11141c; border: 1px solid var(--line); border-radius: 20px;
+  padding: 20px; display: flex; flex-direction: column; gap: 12px; box-shadow: var(--shadow);
+}
+.vpanel-head { display: flex; justify-content: space-between; align-items: center; }
+.vpanel-head h2 { font-size: 1.3rem; }
+.vpanel-x { background: none; border: 0; color: var(--text); font-size: 1.6rem; cursor: pointer; line-height: 1; }
+.vpanel-list { overflow: auto; display: grid; gap: 6px; }
+.vrow {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line); background: #0b0d13;
+}
+.vrow:hover { border-color: var(--accent); }
+.vrow small { display: block; color: var(--mute); font-size: .8rem; }
+.vrow strong { font-family: var(--mono); font-size: .9rem; color: var(--accent); }
 
 /* Boot splash — product, not brochure */
 .splash {
@@ -283,12 +309,12 @@ code { font-family: var(--mono); font-size: .86em; background: rgba(255,255,255,
 }
 .to-top.show { opacity: 1; pointer-events: auto; transform: none; }
 
-.nav-links a:not(.btn) { position: relative; }
-.nav-links a:not(.btn)::after {
+.nav-links a:not(.btn), .nav-text { position: relative; }
+.nav-links a:not(.btn)::after, .nav-text::after {
   content: ""; position: absolute; left: 0; bottom: -6px; width: 0; height: 2px;
   background: var(--accent); transition: width .25s; border-radius: 2px;
 }
-.nav-links a:not(.btn):hover::after, .nav-links a.is-on:not(.btn)::after { width: 100%; }
+.nav-links a:not(.btn):hover::after, .nav-links a.is-on:not(.btn)::after, .nav-text:hover::after { width: 100%; }
 
 @media (prefers-reduced-motion: reduce) {
   .splash { display: none; }
